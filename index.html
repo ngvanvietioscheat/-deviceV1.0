@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@ngvanvietioscheat</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: url('https://v1.pinimg.com/videos/iht/720p/b9/20/78/b920782c2ec44d1f033ee2f0ffe581ae.mp4') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  background: transparent;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  width: 320px;
+  color: #fff;
+  cursor: grab;
+  position: relative;
+}
+
+.menu h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  background: linear-gradient(
+        270deg,
+        #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee,
+        #2b65ff, #8000ff, #ff00c8, #ff0000, #ff7300,
+        #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff,
+        #ff00c8, #ff0000, #ff7300, #ffeb00, #47ff00
+);
+  background-size: 500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 8s linear infinite alternate;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.section {
+  margin-bottom: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.section-title {
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  background: linear-gradient(
+        270deg,
+        #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee,
+        #2b65ff, #8000ff, #ff00c8, #ff0000, #ff7300,
+        #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff,
+        #ff00c8, #ff0000, #ff7300, #ffeb00, #47ff00
+);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 5s linear infinite alternate;
+}
+
+.section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 10px;
+}
+
+.section-content.open {
+  max-height: 1000px;
+  padding: 10px;
+}
+
+.slider-container {
+  margin: 15px 0;
+}
+
+.slider-label {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  background: linear-gradient(
+        270deg,
+        #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee,
+        #2b65ff, #8000ff, #ff00c8, #ff0000, #ff7300,
+        #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff,
+        #ff00c8, #ff0000, #ff7300, #ffeb00, #47ff00
+);
+  background-size: 300% ;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 8s linear infinite alternate;
+}
+
+@keyframes glow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.slider {
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  outline: none;
+  background: linear-gradient(270deg, red, yellow, green, blue, violet, red);
+  background-size: 400% 400%;
+  animation: rainbow-bar 4s linear infinite alternate;
+}
+
+@keyframes rainbow-bar {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px #000;
+  transition: transform 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.switch-container {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switch-label {
+  font-weight: bold;
+  background: linear-gradient(
+         270deg,
+        #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee,
+        #2b65ff, #8000ff, #ff00c8, #ff0000, #ff7300,
+        #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff,
+        #ff00c8, #ff0000, #ff7300, #ffeb00, #47ff00
+);
+  background-size: 500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 8s linear infinite alternate;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-switch {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #444;
+  transition: .4s;
+  border-radius: 34px;
+  overflow: hidden;
+}
+
+.slider-switch:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.switch input:checked + .slider-switch {
+  background: linear-gradient(
+         270deg,
+        #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee,
+        #2b65ff, #8000ff, #ff00c8, #ff0000, #ff7300,
+        #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff,
+        #ff00c8, #ff0000, #ff7300, #ffeb00, #47ff00
+);
+  background-size: 3000%;
+  animation: rainbow-bar 8s linear infinite alternate;
+}
+
+.switch input:checked + .slider-switch:before {
+  transform: translateX(24px);
+}
+
+.activate-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.activate-button {
+  width: 80%;
+  padding: 10px;
+  background: linear-gradient(
+         270deg,
+        #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee,
+        #2b65ff, #8000ff, #ff00c8, #ff0000, #ff7300,
+        #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff,
+        #ff00c8, #ff0000, #ff7300, #ffeb00, #47ff00
+);
+  background-size: 10000%;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  animation: rainbow-bar 20s linear infinite alternate;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  transition: transform 0.2s ease;
+}
+
+.activate-button:hover {
+  transform: scale(1.05);
+}
+
+.activate-button.rung {
+  animation: shake 0.4s forwards;
+}
+
+.activate-button.nhich {
+  animation: bounce 0.3s forwards;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(
+        270deg,
+        #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee,
+        #2b65ff, #8000ff, #ff00c8, #ff0000, #ff7300,
+        #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff,
+        #ff00c8, #ff0000, #ff7300, #ffeb00, #47ff00
+  );
+  background-size: 500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-footer 8s linear infinite alternate;
+}
+
+@keyframes rainbow-footer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+</style>
+</head>
+<body>
+<div class="menu">
+  <h2>Model Device V1.0</h2>
+  <div class="section">
+    <div class="section-title">Basic Config</div>
+    <div class="section-content">
+      <div class="slider-container">
+        <label class="slider-label">
+          <span>Pointer Speed</span>
+          <span class="brightness-value">0</span>
+        </label>
+        <input type="range" min="0" max="120" value="0" class="slider brightness">
+      </div>
+      <div class="slider-container">
+        <label class="slider-label">
+          <span>Enable Configuration</span>
+          <span class="volume-value">0%</span>
+        </label>
+        <input type="range" min="0" max="100" value="0" class="slider volume">
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title">System Specifications</div>
+    <div class="section-content">
+      <div class="switch-container">
+        <span class="switch-label">Assistive Touch</span>
+        <label class="switch">
+          <input type="checkbox" class="nightmode">
+          <span class="slider-switch"></span>
+        </label>
+      </div>
+      <div class="switch-container">
+        <span class="switch-label">Optimizing Phone</span>
+        <label class="switch">
+          <input type="checkbox" class="rainbow-effect">
+          <span class="slider-switch"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title">Run To Activate System Code</div>
+    <div class="section-content">
+      <input type="file" class="file-input">
+      <button class="run-code">Run File</button>
+      <pre class="code-display" style="min-height: 50px; margin-top:10px;"></pre>
+    </div>
+  </div>
+  <div class="activate-container">
+    <button class="activate-button">Activate Config Basic</button>
+  </div>
+  <div class="footer-text">𝕍𝕒𝕟 𝕍𝕚𝕖𝕥 𝕊𝟙 𝕊𝕖𝕣𝕧𝕖𝕣</div>
+</div>
+<script>
+document.querySelectorAll('.section-title').forEach(title => {
+  title.addEventListener('click', () => {
+    title.nextElementSibling.classList.toggle('open');
+  });
+});
+
+const brightness = document.querySelector('.brightness');
+const brightnessValue = document.querySelector('.brightness-value');
+brightness.addEventListener('input', () => {
+  brightnessValue.textContent = brightness.value;
+});
+
+const volume = document.querySelector('.volume');
+const volumeValue = document.querySelector('.volume-value');
+volume.addEventListener('input', () => {
+  volumeValue.textContent = volume.value + '%';
+});
+
+brightness.value = 0;
+brightnessValue.textContent = "0";
+volume.value = 0;
+volumeValue.textContent = "0%";
+document.querySelector('.nightmode').checked = false;
+document.querySelector('.rainbow-effect').checked = false;
+
+const activateBtn = document.querySelector('.activate-button');
+activateBtn.addEventListener('click', () => {
+  activateBtn.classList.add('rung');
+  setTimeout(() => {
+    activateBtn.classList.remove('rung');
+    activateBtn.classList.add('nhich');
+    setTimeout(() => {
+      activateBtn.classList.remove('nhich');
+    }, 300);
+  }, 400);
+});
+
+let fileContent = '';
+
+const fileInput = document.querySelector('.file-input');
+const runCodeBtn = document.querySelector('.run-code');
+const codeDisplay = document.querySelector('.code-display');
+
+fileInput.addEventListener('change', () => {
+  const file = fileInput.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      fileContent = e.target.result;
+    };
+    reader.readAsText(file);
+  }
+});
+
+runCodeBtn.addEventListener('click', () => {
+  codeDisplay.textContent = '';
+  let index = 0;
+  const typeInterval = setInterval(() => {
+    codeDisplay.textContent += fileContent[index];
+    index++;
+    if (index >= fileContent.length) {
+      clearInterval(typeInterval);
+    }
+  }, 20);
+});
+
+const menu = document.querySelector('.menu');
+let isDragging = false, offsetY;
+
+menu.addEventListener('mousedown', e => {
+  isDragging = true;
+  offsetY = e.clientY - menu.getBoundingClientRect().top;
+  menu.style.transition = 'none';
+});
+
+document.addEventListener('mousemove', e => {
+  if (!isDragging) return;
+  menu.style.position = 'absolute';
+  menu.style.top = (e.clientY - offsetY) + 'px';
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+  menu.style.transition = '';
+});
+
+menu.addEventListener('touchstart', e => {
+  isDragging = true;
+  const touch = e.touches[0];
+  offsetY = touch.clientY - menu.getBoundingClientRect().top;
+  menu.style.transition = 'none';
+});
+
+document.addEventListener('touchmove', e => {
+  if (!isDragging) return;
+  const touch = e.touches[0];
+  menu.style.position = 'absolute';
+  menu.style.top = (touch.clientY - offsetY) + 'px';
+});
+
+document.addEventListener('touchend', () => {
+  isDragging = false;
+  menu.style.transition = '';
+});
+</script>
+</body>
+</html>
